@@ -14,8 +14,6 @@
 
 
 
-logging.level.com.team42.NHPS.api.Users:
-  data.AlbumsServiceClient: DEBUG
-  service.UsersServiceImpl: DEBUG
+
 #    com.puihay.photoapp.api.users.PhotoAppApiUsers.data.AlbumsServiceClient: DEBUG
 #    com.puihay.photoapp.api.users.PhotoAppApiUsers.service.UsersServiceImpl: DEBUG

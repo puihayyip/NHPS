@@ -1,11 +1,10 @@
 package com.team42.NHPS.api.users.controller;
 
-import com.team42.NHPS.api.users.Users.model.*;
-import com.team42.NHPS.api.users.service.UsersService;
-import com.team42.NHPS.api.users.shared.UserDTO;
 import com.team42.NHPS.api.users.model.CreateUserResponseModel;
 import com.team42.NHPS.api.users.model.UserDetail;
 import com.team42.NHPS.api.users.model.UserResponseModel;
+import com.team42.NHPS.api.users.service.UsersService;
+import com.team42.NHPS.api.users.shared.UserDTO;
 import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
