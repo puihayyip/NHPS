@@ -5,9 +5,9 @@ spring:
   application:
     name: api-gateway
   config:
-    import: optional:configserver:http://localhost:8012
+#    import: optional:configserver:http://localhost:8012
   rabbitmq:
-    host: localhost
+#    host: localhost
     port: 5672
     username: puihayyip
     password: P@ssw0rd123
