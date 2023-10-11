@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -50,9 +51,9 @@ public class WebSecurity {
         httpSecurity
                 .authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers(mvcBuilder.pattern("/albums-ws/api/users/**")).permitAll()
-                                .requestMatchers(mvcBuilder.pattern("/api/users/**")).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+                                .requestMatchers(mvcBuilder.pattern(HttpMethod.GET, "/api/users/status")).permitAll()
+                                .requestMatchers(mvcBuilder.pattern(HttpMethod.GET, "/albums-ws/api/users/**")).permitAll()
+                                .requestMatchers(mvcBuilder.pattern("/api/users/**")).authenticated()
                 )
                 .addFilter(new AuthorizationFilter(authenticationManager, env))
                 .addFilter(authenticationFilter)

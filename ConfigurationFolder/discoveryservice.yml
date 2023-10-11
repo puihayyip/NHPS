@@ -1,5 +1,3 @@
-spring:
-  security:
-    user:
-      name: puihayyip
-      password: '{cipher}AQAswWYFIX5t17VY6vwQfLNVoLqy70P3aUfpTn5WZCE3BimwxNTvLOWtMjfvPiu4RRvrvfOEqGS4pAAOilB9Qm9+P0dsYZKoVWf8W/TscD3n5/qATrD37Z1A53XTjbnxJPVwCXrHmeAApMHWKBX3Byf+0MJjfeJqI7PJ/UuIUgDkV/BKPY5BZbBzwMkPy2aQd6efIsxD1GVhRrNESNfEmWKjaNTkcnWqMjkSqELIoU0l2AeSua3arvk19J83N0yN6ZmXbpEiBpT9dlg5XYoQAxTbSmZucbA95CbkPloUJ8s1n32tBQ/VpwtJPFMQ+fSKMYR+kyW/a+CaaGxwrpUYgp7f74NVK1qH9d5yGUP+iEGtsKOgjs4K7U85kolIpGYd/xY='
+spring.security.user:
+  name: puihayyip
+  password: '{cipher}AQAswWYFIX5t17VY6vwQfLNVoLqy70P3aUfpTn5WZCE3BimwxNTvLOWtMjfvPiu4RRvrvfOEqGS4pAAOilB9Qm9+P0dsYZKoVWf8W/TscD3n5/qATrD37Z1A53XTjbnxJPVwCXrHmeAApMHWKBX3Byf+0MJjfeJqI7PJ/UuIUgDkV/BKPY5BZbBzwMkPy2aQd6efIsxD1GVhRrNESNfEmWKjaNTkcnWqMjkSqELIoU0l2AeSua3arvk19J83N0yN6ZmXbpEiBpT9dlg5XYoQAxTbSmZucbA95CbkPloUJ8s1n32tBQ/VpwtJPFMQ+fSKMYR+kyW/a+CaaGxwrpUYgp7f74NVK1qH9d5yGUP+iEGtsKOgjs4K7U85kolIpGYd/xY='
