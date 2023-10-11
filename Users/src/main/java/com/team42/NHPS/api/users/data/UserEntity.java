@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users.data;
+package com.team42.NHPS.api.users.data;
 
 import lombok.*;
 

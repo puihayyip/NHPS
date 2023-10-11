@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users.security;
+package com.team42.NHPS.api.users.security;
 
 
 import io.jsonwebtoken.*;

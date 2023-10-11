@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users;
+package com.team42.NHPS.api.users;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

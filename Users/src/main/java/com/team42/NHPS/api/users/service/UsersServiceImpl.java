@@ -1,10 +1,10 @@
-package com.team42.NHPS.api.users.Users.service;
+package com.team42.NHPS.api.users.service;
 
-import com.team42.NHPS.api.users.Users.data.AlbumsServiceClient;
-import com.team42.NHPS.api.users.Users.data.UserEntity;
-import com.team42.NHPS.api.users.Users.data.UsersRepository;
-import com.team42.NHPS.api.users.Users.model.AlbumResponseModel;
-import com.team42.NHPS.api.users.Users.shared.UserDTO;
+import com.team42.NHPS.api.users.data.AlbumsServiceClient;
+import com.team42.NHPS.api.users.data.UserEntity;
+import com.team42.NHPS.api.users.data.UsersRepository;
+import com.team42.NHPS.api.users.model.AlbumResponseModel;
+import com.team42.NHPS.api.users.shared.UserDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.slf4j.Logger;

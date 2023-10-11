@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users.shared;
+package com.team42.NHPS.api.users.shared;
 
 import feign.Response;
 import feign.codec.ErrorDecoder;

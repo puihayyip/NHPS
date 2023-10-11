@@ -1,6 +1,6 @@
-package com.team42.NHPS.api.users.Users.security;
+package com.team42.NHPS.api.users.security;
 
-import com.team42.NHPS.api.users.Users.service.UsersService;
+import com.team42.NHPS.api.users.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

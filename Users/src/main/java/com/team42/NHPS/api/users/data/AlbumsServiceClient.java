@@ -1,6 +1,6 @@
-package com.team42.NHPS.api.users.Users.data;
+package com.team42.NHPS.api.users.data;
 
-import com.team42.NHPS.api.users.Users.model.AlbumResponseModel;
+import com.team42.NHPS.api.users.model.AlbumResponseModel;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.cloud.openfeign.FeignClient;

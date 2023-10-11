@@ -1,6 +1,6 @@
-package com.team42.NHPS.api.users.Users.shared;
+package com.team42.NHPS.api.users.shared;
 
-import com.team42.NHPS.api.users.Users.model.AlbumResponseModel;
+import com.team42.NHPS.api.users.model.AlbumResponseModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

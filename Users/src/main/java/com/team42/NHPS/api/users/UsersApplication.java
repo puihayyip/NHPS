@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users;
+package com.team42.NHPS.api.users;
 
 import feign.Logger;
 import org.springframework.boot.SpringApplication;

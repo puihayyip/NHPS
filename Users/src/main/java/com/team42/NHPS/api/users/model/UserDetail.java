@@ -1,4 +1,4 @@
-package com.team42.NHPS.api.users.Users.model;
+package com.team42.NHPS.api.users.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

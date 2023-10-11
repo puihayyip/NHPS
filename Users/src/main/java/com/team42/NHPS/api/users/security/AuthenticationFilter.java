@@ -1,9 +1,9 @@
-package com.team42.NHPS.api.users.Users.security;
+package com.team42.NHPS.api.users.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.team42.NHPS.api.users.Users.model.LoginRequestModel;
-import com.team42.NHPS.api.users.Users.shared.UserDTO;
-import com.team42.NHPS.api.users.Users.service.UsersService;
+import com.team42.NHPS.api.users.model.LoginRequestModel;
+import com.team42.NHPS.api.users.shared.UserDTO;
+import com.team42.NHPS.api.users.service.UsersService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.FilterChain;
