@@ -1,0 +1,92 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8012
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: puihayyip
+    password: P@ssw0rd123
+  cloud:
+    gateway:
+      routes:
+        - id: users-status-check # Status check
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/api/users/status
+            - Method=GET
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
+        - id: users-ws-create # Create new user
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/api/users
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+        - id: users-ws-login # User login
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/users/login
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+#            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+        - id: users-ws-get-update-delete # Users generic requests
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/api/users/**
+            - Method=GET,PUT,DELETE
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
+        - id: users-ws-actuator # Users MS actuator
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/actuator/**
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+        - id: users-ws-h2-console # Users MS H2 console
+          uri: lb://users-ws
+          predicates:
+            - Path=/users-ws/h2-console
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
+        - id: account-management-status-check # Account management status check
+          uri: lb://account-management-ws
+          predicates:
+            - Path=/api/account/status
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/account-management-ws/(?<segment>.*), /$\{segment}
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+
+token:
+  secret: QbWNI8JMDD0oNYgF3qd7md3Y1LksrZf0wMA1EdWZmYpxiyA1r0hsdKrvEgvhlOMU
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health, mappings

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: PhotoAppApiConfigServer
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/puihayyip/PhotoAppConfiguration
+          username: puihayyip
+          password: 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
+          clone-on-start: true
+          default-label: main
+#        native:
+#          search-locations: file://{user.home}/Documents/Code/'Spring Cloud Tutorial'
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: puihayyip
+    password: P@ssw0rd123
+
+server:
+  port: 8012
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh
+
