@@ -114,6 +114,7 @@ buildNumber.properties
 *.asc
 *.md5
 *.pem
+*.gz
 
 .idea/*
 

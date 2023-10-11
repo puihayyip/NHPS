@@ -50,6 +50,7 @@ public class WebSecurity {
         httpSecurity
                 .authorizeHttpRequests(authorize ->
                         authorize
+                                .requestMatchers(mvcBuilder.pattern("/albums-ws/api/users/**")).permitAll()
                                 .requestMatchers(mvcBuilder.pattern("/api/users/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                 )

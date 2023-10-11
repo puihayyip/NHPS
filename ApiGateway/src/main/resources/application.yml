@@ -66,14 +66,14 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
-        - id: account-management-status-check # Account management status check
-          uri: lb://account-management-ws
+        - id: albums-get # Account management status check
+          uri: lb://albums-ws
           predicates:
-            - Path=/api/account/status
+            - Path=/albums-ws/api/users/**
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/account-management-ws/(?<segment>.*), /$\{segment}
+            - RewritePath=/albums-ws/(?<segment>.*), /$\{segment}
 #      discovery:
 #        locator:
 #          enabled: true

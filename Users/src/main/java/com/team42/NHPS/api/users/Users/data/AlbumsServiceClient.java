@@ -13,7 +13,7 @@ import java.util.List;
 @FeignClient(name = "albums-ws")
 public interface AlbumsServiceClient {
 
-    @GetMapping(value = "users/{userId}/albums")
+    @GetMapping(value = "api/users/{userId}/albums")
     @Retry(name = "albums-ws")
     @CircuitBreaker(name = "albums-ws", fallbackMethod = "getAlbumsFallback")
     public List<AlbumResponseModel> getAlbums(@PathVariable String userId);
