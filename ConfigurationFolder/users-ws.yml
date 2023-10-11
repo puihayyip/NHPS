@@ -1,0 +1,21 @@
+login:
+  url:
+    path: /users-ws/users/login
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/photo_app?serverTimezone=UTC
+    username: puihayyip
+    password: '{cipher}AQBzW+lHeVKvqVyMIfIHzMLlxEeaaV+etO6d0nQsjqcf2+x2iJ/heltA3YtKZ0p81fs2LSQGkiWe07OUQZ0Wp5BmBYHlD8n9GdRwVG3hrz/AEeDSI6ksKw6+GfUViwr7iOgv9uVB6i7z9IL24PDQyyVnEtIh1fWIL/poI8VCVZQxW9rTs/R7GOrKp6HsEk53rie6Zc91v7MMJao7aShk/BkiQH0FeJLQMXsAAYX/gtMLDsDJrxoi1BLj/WeupcJOzmwePh/D5lMpRE08gnYhuBW0xcDipdlzQBTRK9lELjgyfY4nL1vFiuGF8F1HxFyCacCd7JLb01GHgpFeA5G7z7UX8iUPDZeo1PXAYahdpnrObkyOM93NWcSfuWoNyRrMD+A='
+
+
+albums:
+  url: http://ALBUMS-WS/users/%s/albums
+  exceptions:
+    albums-not-found: User's albums are not found
+
+
+logging:
+  file:
+    name:
+      users-ws.log

@@ -1,0 +1,54 @@
+eureka.password: '{cipher}AQAswWYFIX5t17VY6vwQfLNVoLqy70P3aUfpTn5WZCE3BimwxNTvLOWtMjfvPiu4RRvrvfOEqGS4pAAOilB9Qm9+P0dsYZKoVWf8W/TscD3n5/qATrD37Z1A53XTjbnxJPVwCXrHmeAApMHWKBX3Byf+0MJjfeJqI7PJ/UuIUgDkV/BKPY5BZbBzwMkPy2aQd6efIsxD1GVhRrNESNfEmWKjaNTkcnWqMjkSqELIoU0l2AeSua3arvk19J83N0yN6ZmXbpEiBpT9dlg5XYoQAxTbSmZucbA95CbkPloUJ8s1n32tBQ/VpwtJPFMQ+fSKMYR+kyW/a+CaaGxwrpUYgp7f74NVK1qH9d5yGUP+iEGtsKOgjs4K7U85kolIpGYd/xY='
+
+gateway.ip: 172.31.0.0/16
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://puihayyip:${eureka.password}@172.31.47.58:8010/eureka
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+token:
+  expiration_time: 3600000
+  secret: '{cipher}AQCCzeCBxDYaxVO7LdLup833kCdTw8IuhPYh9AUO9gbq4Syw0CVfOJRjNdDFbCGxeFxZYkdMioMbR5JPCYKbtxt3uEO2W8vU5DuNitAIf6ki4b/R7ZziRUCLy60NwnqdpGf7+0OUq7SbYHP27z/FhB8sHA5qYvWJVqnAGO2JLySrYRnZbBqa5BDACBbMczQQP4HjlW3y+cNQEdH9Z1IUEdUC0cTw9PQ6qpBOVvfYFpc7yNxrxQeVuWBD7/xJCtlOSd8t8t41CnppB3Mk1kMN3IO3BYaBFWb2HW2BC+rvGIdxfwJVQ6R1fsIiqApUfQOao6ejNDHrHI9ISVaHeD2yuYX0ax3Ii57Z0xiQ5rC9m7K5KzFHU75wFwv6iBB5NgnTgXbLy7WO3KwQV+E6gdRuq+j5+4tuElzT0tOKEmv/XdVIh+LhctdK31FygCuaSBVOwYiH4XpWJxlDXGo1f+jWpCGr'
+
+login:
+  url:
+    path: /users-ws/users/login
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1
+
+resilience4j:
+  circuitbreaker:
+    circuit-breaker-aspect-order: 1
+    instances:
+      albums-ws:
+        failure-rate-threshold: 50
+        automatic-transition-from-open-to-half-open-enabled: true
+        wait-duration-in-open-state: 10s
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 2
+        minimum-number-of-calls: 1
+        event-consumer-buffer-size: 10
+  retry:
+    retry-aspect-order: 2
+    instances:
+      albums-ws:
+        max-attempts: 3
+        wait-duration: 2s
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 5
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{traceId:-},%X{spanId:-}]"
