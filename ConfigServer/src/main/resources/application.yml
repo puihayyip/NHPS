@@ -11,7 +11,7 @@ spring:
           search-paths:
             - ConfigurationFolder
           username: puihayyip
-          password: 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
+          password: ${{ secrets.repo_access_token }}
           clone-on-start: true
           default-label: main
 
