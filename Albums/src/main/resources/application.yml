@@ -1,8 +1,0 @@
-spring:
-  application.name: albums-ws
-  config.import: optional:configserver:http://localhost:8012
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: puihayyip
-    password: P@ssw0rd123

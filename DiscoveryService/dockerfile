@@ -1,3 +1,4 @@
 FROM openjdk:17-jdk-slim
 COPY target/PhotoAppDiscoveryService-0.0.1-SNAPSHOT.jar DiscoveryService.jar
+EXPOSE 8010
 ENTRYPOINT ["java","-jar","DiscoveryService.jar"]

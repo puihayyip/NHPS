@@ -57,14 +57,6 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
-        - id: users-ws-h2-console # Users MS H2 console
-          uri: lb://users-ws
-          predicates:
-            - Path=/users-ws/h2-console
-            - Method=GET
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/users-ws/(?<segment>.*), /$\{segment}
         - id: albums-get # Account management status check
           uri: lb://albums-ws
           predicates:
