@@ -9,8 +9,8 @@ spring:
   rabbitmq:
     host: localhost
     port: 5672
-    username: puihayyip
-    password: P@ssw0rd123
+    username: guest
+    password: guest
   cloud:
     gateway:
       routes:
