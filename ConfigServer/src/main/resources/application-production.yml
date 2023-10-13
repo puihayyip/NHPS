@@ -12,7 +12,7 @@ spring:
             - ConfigurationFolder
           username: puihayyip
 #          password: ${{ secrets.repo_access_token }}
-          password: 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
+          password: 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
           clone-on-start: true
           default-label: main
 
